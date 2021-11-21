@@ -162,6 +162,18 @@ namespace CountryAPI.Controllers
                 };
                 return destination;
             }
+            else if (roadTo == "USA")
+            {
+                var destination = new CountryRoad
+                {
+                    Destination = roadTo,
+                    Countries = new List<string>
+                    {
+                        "USA"
+                    }
+                };
+                return destination;
+            }
             else
             {
                 return NotFound();
