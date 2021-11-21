@@ -4,14 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace CountryAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     public class CountryRoadController : ControllerBase
     {
-        private static readonly string[] Countries = new[]
+        private static readonly string[] ListOfCountries = new[]
         {
             "CAN", "USA", "MEX", "BLZ", "GTM", "SLV", "HND", "NIC", "CRI", "PAN"
         };
@@ -23,10 +23,19 @@ namespace CountryAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        public string Get()
+        [HttpGet("{roadTo}")]
+        public JsonDocument GetJson(string roadTo)
         {
-            return "CAN";
+            var destination = new CountryRoad();
+            if (roadTo == "CAN")
+            {
+            destination = new CountryRoad{
+                Destination = roadTo,
+                Countries = { ListOfCountries[1], ListOfCountries[0] }
+            };
+            }
+            var destinationJson = JsonDocument.Parse(JsonSerializer.Serialize(destination));
+            return destinationJson;
         }
     }
 }

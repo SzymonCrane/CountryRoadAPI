@@ -1,8 +1,10 @@
-﻿namespace CountryAPI
+﻿using System.Collections.Generic;
+
+namespace CountryAPI
 {
     public class CountryRoad
     {
-        public string CountryCode { get; set; }
-        public string CountryName { get; set; }
+        public string Destination { get; set; }
+        public List<string> Countries { get; set; }
     }
 }
