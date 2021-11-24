@@ -8,7 +8,7 @@ namespace CountryAPI.Controllers
 {
     public class HomeController : Controller
     {
-        [HttpGet("index")]
+        [HttpGet("")]
         public IActionResult Index()
         {
             return Ok("10.5");
