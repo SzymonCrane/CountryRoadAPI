@@ -14,7 +14,6 @@ namespace CountryAPI
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
-            Console.Write("10.5");
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

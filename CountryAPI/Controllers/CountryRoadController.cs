@@ -12,7 +12,7 @@ namespace CountryAPI.Controllers
     [ApiController]
     public class CountryRoadController : ControllerBase
     {
-        
+
         private readonly ILogger<CountryRoadController> _logger;
         private ICountryRoadService countryRoadService { get; set; }
         public CountryRoadController(ILogger<CountryRoadController> logger, ICountryRoadService countryRoadServ)
@@ -20,6 +20,7 @@ namespace CountryAPI.Controllers
             _logger = logger;
             countryRoadService = countryRoadServ;
         }
+
         [HttpGet("{roadTo}")]
         public ActionResult<List<string>> Get(string roadTo)
         {
