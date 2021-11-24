@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'countryroadsapi'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5790DB105C724917ABEE7760814AEBC2 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EFEC5E4128A541F9AE7590AB100D8CCD }}
           package: .
